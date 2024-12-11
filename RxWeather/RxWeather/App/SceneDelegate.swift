@@ -16,7 +16,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = ViewController()
+        
+        let sceneCoordinator = SceneCoordinator(window: window ?? UIWindow())
+        let weatherApi = OpenWeatherMapApi()
+        let locationProvider = StaticLocationProvider()
+        
+        let viewModel = MainViewModel(title: "", sceneCoordinator: sceneCoordinator, weatherApi: weatherApi, locationProvider: locationProvider)
+        
+        let scene = Scene.main(viewModel)
+        
+        sceneCoordinator.transition(to: scene, using: .root, animated: false)
+        
         window?.makeKeyAndVisible()
     }
 
