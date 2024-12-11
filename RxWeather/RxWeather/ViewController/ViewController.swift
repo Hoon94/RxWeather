@@ -5,6 +5,7 @@
 //  Created by Daehoon Lee on 12/9/24.
 //
 
+import RxDataSources
 import SnapKit
 import Then
 import UIKit
@@ -35,6 +36,27 @@ class ViewController: UIViewController, ViewModelBindableType {
     private let contentStackView = UIStackView().then {
         $0.axis = .vertical
     }
+    
+    private let dataSource: RxTableViewSectionedAnimatedDataSource<SectionModel> = {
+        let dataSource = RxTableViewSectionedAnimatedDataSource<SectionModel> { (dataSource, tableView, indexPath, data) -> UITableViewCell in
+            switch indexPath.section {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: SummaryTableViewCell.identifier, for: indexPath) as? SummaryTableViewCell else { return UITableViewCell() }
+                
+                cell.configure(from: data, tempFormatter: MainViewModel.tempFormatter)
+                
+                return cell
+            default:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: ForecastTableViewCell.identifier, for: indexPath) as? ForecastTableViewCell else { return UITableViewCell() }
+                
+                cell.configure(from: data, dateFormatter: MainViewModel.dateFormatter, tempFormatter: MainViewModel.tempFormatter)
+                
+                return cell
+            }
+        }
+        
+        return dataSource
+    }()
     
     // MARK: - Lifecycle
     
