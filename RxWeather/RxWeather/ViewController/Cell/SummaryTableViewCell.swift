@@ -17,10 +17,22 @@ class SummaryTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    private let weatherImageView = UIImageView()
-    private let statusLabel = UILabel()
-    private let minMaxLabel = UILabel()
-    private let currentTemperatureLabel = UILabel()
+    private let weatherImageView = UIImageView().then {
+        $0.tintColor = .red
+        $0.contentMode = .scaleAspectFit
+    }
+    
+    private let statusLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 30)
+    }
+    
+    private let minMaxLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 17)
+    }
+    
+    private let currentTemperatureLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 100, weight: .ultraLight)
+    }
     
     private let weatherStackView = UIStackView().then {
         $0.axis = .horizontal
@@ -28,9 +40,9 @@ class SummaryTableViewCell: UITableViewCell {
     }
     
     private let contentStackView = UIStackView().then {
-        $0.axis = .vertical
         $0.spacing = 8
-        $0.alignment = .center
+        $0.axis = .vertical
+        $0.alignment = .leading
     }
     
     // MARK: - Lifecycle
@@ -59,10 +71,16 @@ class SummaryTableViewCell: UITableViewCell {
     }
     
     private func configureLayout() {
+        backgroundColor = .clear
+        
         contentView.addSubview(contentStackView)
         
         weatherStackView.addArrangedSubview(weatherImageView)
         weatherStackView.addArrangedSubview(statusLabel)
+        
+        weatherImageView.snp.makeConstraints { make in
+            make.size.equalTo(50)
+        }
         
         contentStackView.addArrangedSubview(weatherStackView)
         contentStackView.addArrangedSubview(minMaxLabel)

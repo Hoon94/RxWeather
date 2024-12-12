@@ -5,6 +5,7 @@
 //  Created by Daehoon Lee on 12/9/24.
 //
 
+import NSObject_Rx
 import RxDataSources
 import SnapKit
 import Then
@@ -23,7 +24,7 @@ class ViewController: UIViewController, ViewModelBindableType {
     private let locationLabel = UILabel().then {
         $0.textColor = .white
         $0.textAlignment = .center
-        $0.font = .preferredFont(forTextStyle: .largeTitle)
+        $0.font = .systemFont(ofSize: 20)
     }
     
     private let listTableView = UITableView().then {
@@ -31,10 +32,13 @@ class ViewController: UIViewController, ViewModelBindableType {
         $0.separatorStyle = .none
         $0.allowsSelection = false
         $0.showsVerticalScrollIndicator = false
+        $0.register(SummaryTableViewCell.self, forCellReuseIdentifier: SummaryTableViewCell.identifier)
+        $0.register(ForecastTableViewCell.self, forCellReuseIdentifier: ForecastTableViewCell.identifier)
     }
     
     private let contentStackView = UIStackView().then {
         $0.axis = .vertical
+        $0.spacing = 20
     }
     
     private let dataSource: RxTableViewSectionedAnimatedDataSource<SectionModel> = {
@@ -87,7 +91,13 @@ class ViewController: UIViewController, ViewModelBindableType {
     // MARK: - Helpers
     
     func bindViewModel() {
+        viewModel.title
+            .bind(to: locationLabel.rx.text)
+            .disposed(by: rx.disposeBag)
         
+        viewModel.weatherData
+            .drive(listTableView.rx.items(dataSource: dataSource))
+            .disposed(by: rx.disposeBag)
     }
     
     private func configureLayout() {
@@ -104,7 +114,7 @@ class ViewController: UIViewController, ViewModelBindableType {
         
         contentStackView.snp.makeConstraints { make in
             make.directionalVerticalEdges.equalTo(view.safeAreaLayoutGuide)
-            make.directionalHorizontalEdges.equalToSuperview()
+            make.directionalHorizontalEdges.equalToSuperview().inset(20)
         }
     }
 }
