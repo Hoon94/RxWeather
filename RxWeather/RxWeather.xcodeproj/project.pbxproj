@@ -40,6 +40,7 @@
 		785AEE8C2D09931A0084B413 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785AEE8B2D09931A0084B413 /* SceneCoordinatorType.swift */; };
 		785AEE8E2D09955D0084B413 /* TransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785AEE8D2D09955D0084B413 /* TransitionModel.swift */; };
 		785AEE902D0995A20084B413 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785AEE8F2D0995A20084B413 /* SceneCoordinator.swift */; };
+		785AEE922D0BDF0F0084B413 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785AEE912D0BDF0F0084B413 /* RxCLLocationManagerDelegateProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		785AEE8B2D09931A0084B413 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		785AEE8D2D09955D0084B413 /* TransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionModel.swift; sourceTree = "<group>"; };
 		785AEE8F2D0995A20084B413 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		785AEE912D0BDF0F0084B413 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				785AEE832D0985D60084B413 /* WeatherApi.swift */,
 				785AEE852D098F9F0084B413 /* LocationProviderType.swift */,
 				785AEE872D0990050084B413 /* StaticLocationProvider.swift */,
+				785AEE912D0BDF0F0084B413 /* RxCLLocationManagerDelegateProxy.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				785AEE6D2D0735EA0084B413 /* SummaryTableViewCell.swift in Sources */,
 				785AEE842D0985D60084B413 /* WeatherApi.swift in Sources */,
 				785AEE3A2D072F350084B413 /* SceneDelegate.swift in Sources */,
+				785AEE922D0BDF0F0084B413 /* RxCLLocationManagerDelegateProxy.swift in Sources */,
 				785AEE862D098F9F0084B413 /* LocationProviderType.swift in Sources */,
 				785AEE732D073EA20084B413 /* MainViewModel.swift in Sources */,
 				785AEE7B2D0750E90084B413 /* WeatherData.swift in Sources */,
