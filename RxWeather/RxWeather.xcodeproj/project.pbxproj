@@ -41,6 +41,12 @@
 		785AEE8E2D09955D0084B413 /* TransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785AEE8D2D09955D0084B413 /* TransitionModel.swift */; };
 		785AEE902D0995A20084B413 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785AEE8F2D0995A20084B413 /* SceneCoordinator.swift */; };
 		785AEE922D0BDF0F0084B413 /* RxCLLocationManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785AEE912D0BDF0F0084B413 /* RxCLLocationManagerDelegateProxy.swift */; };
+		785AEE942D0C8F670084B413 /* CoreLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785AEE932D0C8F670084B413 /* CoreLocationProvider.swift */; };
+		785AEE9C2D0C97980084B413 /* 금남로.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 785AEE972D0C97970084B413 /* 금남로.gpx */; };
+		785AEE9D2D0C97980084B413 /* 광안리.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 785AEE982D0C97970084B413 /* 광안리.gpx */; };
+		785AEE9E2D0C97980084B413 /* 동성로.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 785AEE992D0C97970084B413 /* 동성로.gpx */; };
+		785AEE9F2D0C97980084B413 /* 강릉항.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 785AEE9A2D0C97980084B413 /* 강릉항.gpx */; };
+		785AEEA02D0C97980084B413 /* 제주공항.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 785AEE9B2D0C97980084B413 /* 제주공항.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +78,13 @@
 		785AEE8D2D09955D0084B413 /* TransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionModel.swift; sourceTree = "<group>"; };
 		785AEE8F2D0995A20084B413 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		785AEE912D0BDF0F0084B413 /* RxCLLocationManagerDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCLLocationManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		785AEE932D0C8F670084B413 /* CoreLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationProvider.swift; sourceTree = "<group>"; };
+		785AEE962D0C95D70084B413 /* 강남역.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "강남역.gpx"; sourceTree = "<group>"; };
+		785AEE972D0C97970084B413 /* 금남로.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "금남로.gpx"; sourceTree = "<group>"; };
+		785AEE982D0C97970084B413 /* 광안리.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "광안리.gpx"; sourceTree = "<group>"; };
+		785AEE992D0C97970084B413 /* 동성로.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "동성로.gpx"; sourceTree = "<group>"; };
+		785AEE9A2D0C97980084B413 /* 강릉항.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "강릉항.gpx"; sourceTree = "<group>"; };
+		785AEE9B2D0C97980084B413 /* 제주공항.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "제주공항.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,12 +161,14 @@
 		785AEE4D2D07301A0084B413 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				785AEE952D0C95830084B413 /* Locations */,
 				785AEE7D2D0981F80084B413 /* ApiKey.swift */,
 				785AEE7F2D0982200084B413 /* Endpoint.swift */,
 				785AEE812D0984F50084B413 /* WeatherApiType.swift */,
 				785AEE832D0985D60084B413 /* WeatherApi.swift */,
 				785AEE852D098F9F0084B413 /* LocationProviderType.swift */,
 				785AEE872D0990050084B413 /* StaticLocationProvider.swift */,
+				785AEE932D0C8F670084B413 /* CoreLocationProvider.swift */,
 				785AEE912D0BDF0F0084B413 /* RxCLLocationManagerDelegateProxy.swift */,
 			);
 			path = Service;
@@ -205,6 +220,19 @@
 				785AEE742D074ED10084B413 /* SampleData.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		785AEE952D0C95830084B413 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				785AEE962D0C95D70084B413 /* 강남역.gpx */,
+				785AEE9A2D0C97980084B413 /* 강릉항.gpx */,
+				785AEE982D0C97970084B413 /* 광안리.gpx */,
+				785AEE972D0C97970084B413 /* 금남로.gpx */,
+				785AEE992D0C97970084B413 /* 동성로.gpx */,
+				785AEE9B2D0C97980084B413 /* 제주공항.gpx */,
+			);
+			path = Locations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,8 +310,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785AEEA02D0C97980084B413 /* 제주공항.gpx in Resources */,
+				785AEE9D2D0C97980084B413 /* 광안리.gpx in Resources */,
+				785AEE9E2D0C97980084B413 /* 동성로.gpx in Resources */,
 				785AEE412D072F390084B413 /* Assets.xcassets in Resources */,
 				785AEE442D072F390084B413 /* Base in Resources */,
+				785AEE9F2D0C97980084B413 /* 강릉항.gpx in Resources */,
+				785AEE9C2D0C97980084B413 /* 금남로.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +337,7 @@
 				785AEE7E2D0981F80084B413 /* ApiKey.swift in Sources */,
 				785AEE792D0750A80084B413 /* Forecast.swift in Sources */,
 				785AEE752D074ED10084B413 /* SampleData.swift in Sources */,
+				785AEE942D0C8F670084B413 /* CoreLocationProvider.swift in Sources */,
 				785AEE8C2D09931A0084B413 /* SceneCoordinatorType.swift in Sources */,
 				785AEE682D0734F40084B413 /* ViewModelBindableType.swift in Sources */,
 				785AEE382D072F350084B413 /* AppDelegate.swift in Sources */,

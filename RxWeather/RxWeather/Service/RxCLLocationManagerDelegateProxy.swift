@@ -48,7 +48,7 @@ extension Reactive where Base: CLLocationManager {
         
         return delegate.methodInvoked(selector)
             .map { parameters in
-                return CLAuthorizationStatus(rawValue: parameters[1] as? Int32 ?? 0) ?? .notDetermined
+                return (parameters[0] as? CLLocationManager ?? CLLocationManager()).authorizationStatus
             }
     }
 }
