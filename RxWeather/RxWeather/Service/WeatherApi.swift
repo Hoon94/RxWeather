@@ -39,7 +39,10 @@ class OpenWeatherMapApi: NSObject, WeatherApiType {
     private func fetchSummary(location: CLLocation) -> Observable<WeatherDataType?> {
         let request = composeUrlRequest(endpoint: summaryEndpoint, from: location)
         
-        return urlSession.rx.data(request: request)
+        return request
+            .flatMap { [unowned self] request in
+                self.urlSession.rx.data(request: request)
+            }
             .map { data -> WeatherSummary in
                 let decoder = JSONDecoder()
                 
@@ -52,7 +55,10 @@ class OpenWeatherMapApi: NSObject, WeatherApiType {
     private func fetchForecast(location: CLLocation) -> Observable<[WeatherDataType]> {
         let request = composeUrlRequest(endpoint: forecastEndpoint, from: location)
         
-        return urlSession.rx.data(request: request)
+        return request
+            .flatMap { [unowned self] request in
+                self.urlSession.rx.data(request: request)
+            }
             .map { data -> [WeatherData] in
                 let decoder = JSONDecoder()
                 let forecast = try decoder.decode(Forecast.self, from: data)
