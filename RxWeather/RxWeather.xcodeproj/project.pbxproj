@@ -47,6 +47,7 @@
 		785AEE9E2D0C97980084B413 /* 동성로.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 785AEE992D0C97970084B413 /* 동성로.gpx */; };
 		785AEE9F2D0C97980084B413 /* 강릉항.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 785AEE9A2D0C97980084B413 /* 강릉항.gpx */; };
 		785AEEA02D0C97980084B413 /* 제주공항.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 785AEE9B2D0C97980084B413 /* 제주공항.gpx */; };
+		785AEEA32D1464FE0084B413 /* CLLocation+HotPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785AEEA22D1464FE0084B413 /* CLLocation+HotPlace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		785AEE992D0C97970084B413 /* 동성로.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "동성로.gpx"; sourceTree = "<group>"; };
 		785AEE9A2D0C97980084B413 /* 강릉항.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "강릉항.gpx"; sourceTree = "<group>"; };
 		785AEE9B2D0C97980084B413 /* 제주공항.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "제주공항.gpx"; sourceTree = "<group>"; };
+		785AEEA22D1464FE0084B413 /* CLLocation+HotPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+HotPlace.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				785AEE702D0737F90084B413 /* UIImage+Weather.swift */,
+				785AEEA22D1464FE0084B413 /* CLLocation+HotPlace.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				785AEE802D0982200084B413 /* Endpoint.swift in Sources */,
 				785AEE7E2D0981F80084B413 /* ApiKey.swift in Sources */,
 				785AEE792D0750A80084B413 /* Forecast.swift in Sources */,
+				785AEEA32D1464FE0084B413 /* CLLocation+HotPlace.swift in Sources */,
 				785AEE752D074ED10084B413 /* SampleData.swift in Sources */,
 				785AEE942D0C8F670084B413 /* CoreLocationProvider.swift in Sources */,
 				785AEE8C2D09931A0084B413 /* SceneCoordinatorType.swift in Sources */,

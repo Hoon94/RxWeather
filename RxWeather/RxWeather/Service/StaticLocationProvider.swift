@@ -15,7 +15,7 @@ struct StaticLocationProvider: LocationProviderType {
     
     @discardableResult
     func currentLocation() -> RxSwift.Observable<CLLocation> {
-        return Observable.just(CLLocation(latitude: 37.498206, longitude: 127.02761))
+        return Observable.just(CLLocation.gangnamStation)
     }
     
     @discardableResult

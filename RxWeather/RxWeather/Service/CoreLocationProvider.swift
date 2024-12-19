@@ -16,7 +16,7 @@ class CoreLocationProvider: LocationProviderType {
     
     private let locationManager = CLLocationManager()
     
-    private let location = BehaviorRelay<CLLocation>(value: .init(latitude: 37.498206, longitude: 127.02761))
+    private let location = BehaviorRelay<CLLocation>(value: CLLocation.gangnamStation)
     
     private let address = BehaviorRelay<String>(value: "강남역")
     
@@ -34,7 +34,7 @@ class CoreLocationProvider: LocationProviderType {
         
         locationManager.rx.didUpdateLocation
             .throttle(.seconds(5), scheduler: MainScheduler.instance)
-            .map { $0.last ?? CLLocation(latitude: 37.498206, longitude: 127.02761) }
+            .map { $0.last ?? CLLocation.gangnamStation }
             .bind(to: location)
             .disposed(by: disposeBag)
         
